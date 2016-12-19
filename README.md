@@ -61,21 +61,9 @@ const configureStore = (initialState) =>
     initialState,
     applyMiddleware(
       // other middleware
-      authMiddleware()
+      authMiddleware
     )
   )
 
 export default configureStore
-```
-
-## API
-
-### `authMiddleware([config])`
-
-* [`config`] *(Object)*: If specified, customizes the behavior of the middleware.
-  * [`logoutOn = []`] *(Array)*: Dispatches a logout action every time an action type matches an element inside the array.
-
-> Every time an action of type = 'FOO' is dispatched, a logout action is dispatched:
-```js
-authMiddleware({ logoutOn: ['FOO'] })
 ```
