@@ -23,7 +23,11 @@ const listenForCredentials = (popup, state, resolve, reject) => {
     }
 
     if (response.access_token) {
-      resolve(response.access_token)
+      const result = {
+        token: response.access_token,
+        expires_at: response.expires_in ? new Date().getTime() + parseInt(response.expires_in) * 1000 : null
+      }
+      resolve(result)
     } else {
       reject(response.error || 'Unknown error.')
     }
