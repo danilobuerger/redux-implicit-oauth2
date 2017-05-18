@@ -1,5 +1,5 @@
 const TOKEN_KEY = 'token'
-const EXPIRES_AT_KEY = 'expires_at'
+const EXPIRES_AT_KEY = 'expiresAt'
 
 export const getExpiresAt = () =>
   window.localStorage.getItem(EXPIRES_AT_KEY) || null
@@ -15,9 +15,9 @@ export const getToken = () => {
   return null
 }
 
-export const setToken = (token, expires_at) => {
+export const setToken = (token, expiresAt) => {
   window.localStorage.setItem(TOKEN_KEY, token)
-  window.localStorage.setItem(EXPIRES_AT_KEY, expires_at)
+  window.localStorage.setItem(EXPIRES_AT_KEY, expiresAt)
 }
 
 export const removeToken = () => {

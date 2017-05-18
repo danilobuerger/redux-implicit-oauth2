@@ -4,7 +4,7 @@ import { LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from './actions'
 const initialState = {
   isLoggedIn: hasToken(),
   token: getToken(),
-  expires_at: getExpiresAt(),
+  expiresAt: getExpiresAt(),
   error: null
 }
 
@@ -14,21 +14,21 @@ const auth = (state = initialState, action) => {
       return Object.assign({}, state, {
         isLoggedIn: true,
         token: action.token,
-        expires_at: action.expires_at,
+        expiresAt: action.expiresAt,
         error: null
       })
     case LOGIN_FAILURE:
       return Object.assign({}, state, {
         isLoggedIn: false,
         token: null,
-        expires_at: null,
+        expiresAt: null,
         error: action.error
       })
     case LOGOUT:
       return Object.assign({}, state, {
         isLoggedIn: false,
         token: null,
-        expires_at: null,
+        expiresAt: null,
         error: null
       })
     default:

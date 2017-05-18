@@ -9,10 +9,10 @@ const loginRequest = () => ({
   type: LOGIN_REQUEST
 })
 
-const loginSuccess = (token, expires_at) => ({
+const loginSuccess = (token, expiresAt) => ({
   type: LOGIN_SUCCESS,
   token,
-  expires_at
+  expiresAt
 })
 
 const loginFailure = (error) => ({
@@ -23,7 +23,7 @@ const loginFailure = (error) => ({
 export const login = (config) => (dispatch) => {
   dispatch(loginRequest())
   return authorize(config).then(
-    ({token, expires_at}) => dispatch(loginSuccess(token, expires_at)),
+    ({token, expiresAt}) => dispatch(loginSuccess(token, expiresAt)),
     (error) => dispatch(loginFailure(error))
   )
 }
