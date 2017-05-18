@@ -23,9 +23,10 @@ const listenForCredentials = (popup, state, resolve, reject) => {
     }
 
     if (response.access_token) {
+      const expiresIn = response.expires_in ? parseInt(response.expires_in) : NaN
       const result = {
         token: response.access_token,
-        expiresAt: response.expires_in && !isNaN(response.expires_in) ? new Date().getTime() + parseInt(response.expires_in) * 1000 : null
+        expiresAt: !isNaN(expiresIn) ? new Date().getTime() + expiresIn * 1000 : null
       }
       resolve(result)
     } else {
