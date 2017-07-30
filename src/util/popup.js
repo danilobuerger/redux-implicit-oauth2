@@ -10,7 +10,7 @@ const getPopupDimensions = (width, height) => {
   return `width=${width},height=${height},top=${top},left=${left}`
 }
 
-const openPopup = (url, name) =>
-  window.open(url, name, `${SETTINGS},${getPopupDimensions(400, 400)}`)
+const openPopup = (url, name, width, height) =>
+  window.open(url, name, `${SETTINGS},${getPopupDimensions(width, height)}`)
 
 export default openPopup
