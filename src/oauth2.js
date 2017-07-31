@@ -48,7 +48,10 @@ const authorize = (config) => {
     scope: config.scope,
     redirect_uri: config.redirect
   })
-  const popup = openPopup(config.url + (config.url.indexOf('?') === -1 ? '?' : '&') + query, 'oauth2')
+  const url = config.url + (config.url.indexOf('?') === -1 ? '?' : '&') + query
+  const width = config.width || 400
+  const height = config.height || 400
+  const popup = openPopup(url, 'oauth2', width, height)
 
   return new Promise((resolve, reject) => listenForCredentials(popup, state, resolve, reject))
 }

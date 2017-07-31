@@ -17,7 +17,9 @@ const config = {
   url: "https://example.com/authorize",
   client: "some_client_id",
   redirect: "https://example.com/callback.html",
-  scope: "some_scope"
+  scope: "some_scope",
+  width: 400, // Width (in pixels) of login popup window. Optional, default: 400
+  height: 400 // Height (in pixels) of login popup window. Optional, default: 400
 }
 
 const Login = ({ isLoggedIn, login, logout }) => {
