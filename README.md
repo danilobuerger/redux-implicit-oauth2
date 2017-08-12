@@ -9,7 +9,8 @@ Set the config object according to your OAuth 2.0 server parameters.
 The redirect callback page should be on the same site as the rest of your app.
 
 ```jsx
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { login, logout } from 'redux-implicit-oauth2'
 
