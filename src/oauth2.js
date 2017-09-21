@@ -23,10 +23,14 @@ const listenForCredentials = (popup, state, resolve, reject) => {
     }
 
     if (response.access_token) {
-      const expiresIn = response.expires_in ? parseInt(response.expires_in) : NaN
+      const expiresIn = response.expires_in
+        ? parseInt(response.expires_in)
+        : NaN
       const result = {
         token: response.access_token,
-        expiresAt: !isNaN(expiresIn) ? new Date().getTime() + expiresIn * 1000 : null
+        expiresAt: !isNaN(expiresIn)
+          ? new Date().getTime() + expiresIn * 1000
+          : null
       }
       resolve(result)
     } else {
@@ -39,7 +43,7 @@ const listenForCredentials = (popup, state, resolve, reject) => {
   }
 }
 
-const authorize = (config) => {
+const authorize = config => {
   const state = cuid()
   const query = querystring.stringify({
     state,
@@ -53,7 +57,9 @@ const authorize = (config) => {
   const height = config.height || 400
   const popup = openPopup(url, 'oauth2', width, height)
 
-  return new Promise((resolve, reject) => listenForCredentials(popup, state, resolve, reject))
+  return new Promise((resolve, reject) =>
+    listenForCredentials(popup, state, resolve, reject)
+  )
 }
 
 export default authorize

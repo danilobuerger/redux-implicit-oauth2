@@ -15,16 +15,16 @@ const loginSuccess = (token, expiresAt) => ({
   expiresAt
 })
 
-const loginFailure = (error) => ({
+const loginFailure = error => ({
   type: LOGIN_FAILURE,
   error
 })
 
-export const login = (config) => (dispatch) => {
+export const login = config => dispatch => {
   dispatch(loginRequest())
   return authorize(config).then(
-    ({token, expiresAt}) => dispatch(loginSuccess(token, expiresAt)),
-    (error) => dispatch(loginFailure(error))
+    ({ token, expiresAt }) => dispatch(loginSuccess(token, expiresAt)),
+    error => dispatch(loginFailure(error))
   )
 }
 

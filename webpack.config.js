@@ -2,9 +2,7 @@ var webpack = require('webpack')
 
 var config = {
   module: {
-    loaders: [
-      { test: /\.js$/, loader: 'babel', exclude: /node_modules/ }
-    ]
+    loaders: [{ test: /\.js$/, loader: 'babel', exclude: /node_modules/ }]
   },
   output: {
     library: 'ReduxImplicitOAuth2',
@@ -12,7 +10,9 @@ var config = {
   },
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) })
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
   ]
 }
 

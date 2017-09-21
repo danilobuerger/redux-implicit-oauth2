@@ -4,8 +4,7 @@ const EXPIRES_AT_KEY = 'expiresAt'
 export const getExpiresAt = () =>
   window.localStorage.getItem(EXPIRES_AT_KEY) || null
 
-export const hasToken = () =>
-  getToken() !== null
+export const hasToken = () => getToken() !== null
 
 export const getToken = () => {
   const expires_at = getExpiresAt()
