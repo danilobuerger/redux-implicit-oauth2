@@ -53,7 +53,6 @@ Don't forget to add the reducer and middleware to your Redux store:
 
 ```js
 import { createStore, combineReducers, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
 import { authMiddleware, authReducer as auth } from 'redux-implicit-oauth2'
 
 const configureStore = (initialState) =>
@@ -65,7 +64,6 @@ const configureStore = (initialState) =>
     initialState,
     applyMiddleware(
       // other middleware
-      thunk,
       authMiddleware
     )
   )
