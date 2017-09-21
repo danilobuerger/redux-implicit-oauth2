@@ -1,6 +1,6 @@
 {
   "name": "redux-implicit-oauth2",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "OAuth 2.0 Implicit Grant Flow with Redux",
   "keywords": [
     "react",
