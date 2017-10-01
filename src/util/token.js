@@ -8,7 +8,7 @@ export const hasToken = () => getToken() !== null
 
 export const getToken = () => {
   const expires_at = getExpiresAt()
-  if (expires_at === null || expires_at > new Date().getTime()) {
+  if (expires_at === null || expires_at > Date.now()) {
     return window.localStorage.getItem(TOKEN_KEY) || null
   }
   return null

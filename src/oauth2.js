@@ -28,9 +28,7 @@ const listenForCredentials = (popup, state, resolve, reject) => {
         : NaN
       const result = {
         token: response.access_token,
-        expiresAt: !isNaN(expiresIn)
-          ? new Date().getTime() + expiresIn * 1000
-          : null
+        expiresAt: !isNaN(expiresIn) ? Date.now() + expiresIn * 1000 : null
       }
       resolve(result)
     } else {
