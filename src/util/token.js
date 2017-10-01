@@ -16,7 +16,11 @@ export const getToken = () => {
 
 export const setToken = (token, expiresAt) => {
   window.localStorage.setItem(TOKEN_KEY, token)
-  window.localStorage.setItem(EXPIRES_AT_KEY, expiresAt)
+  if (expiresAt !== null) {
+    window.localStorage.setItem(EXPIRES_AT_KEY, expiresAt)
+  } else {
+    window.localStorage.removeItem(EXPIRES_AT_KEY)
+  }
 }
 
 export const removeToken = () => {
