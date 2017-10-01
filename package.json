@@ -60,6 +60,9 @@
   "jest": {
     "setupFiles": [
       "jest-localstorage-mock"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js"
     ]
   }
 }
