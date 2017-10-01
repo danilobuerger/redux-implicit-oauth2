@@ -49,7 +49,7 @@
   "scripts": {
     "clean": "rimraf lib dist",
     "lint": "eslint src",
-    "build:lib": "babel src --out-dir lib",
+    "build:lib": "babel src --out-dir lib --ignore '**/*.test.js'",
     "build:umd": "cross-env NODE_ENV=development webpack src/index.js dist/redux-implicit-oauth2.js",
     "build:umd:min": "cross-env NODE_ENV=production webpack src/index.js dist/redux-implicit-oauth2.min.js",
     "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
