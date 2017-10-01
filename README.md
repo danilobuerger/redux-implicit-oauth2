@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/danilobuerger/redux-implicit-oauth2.svg?branch=master)](https://travis-ci.org/danilobuerger/redux-implicit-oauth2) [![Coverage Status](https://coveralls.io/repos/github/danilobuerger/redux-implicit-oauth2/badge.svg?branch=master)](https://coveralls.io/github/danilobuerger/redux-implicit-oauth2?branch=master)
+
 # redux-implicit-oauth2
 
 [OAuth 2.0 Implicit Grant Flow](https://tools.ietf.org/html/rfc6749#section-4.2) with [Redux](https://github.com/reactjs/redux).
