@@ -2,7 +2,7 @@ const TOKEN_KEY = 'token'
 const EXPIRES_AT_KEY = 'expiresAt'
 
 export const getExpiresAt = () =>
-  window.localStorage.getItem(EXPIRES_AT_KEY) || null
+  Number(window.localStorage.getItem(EXPIRES_AT_KEY)) || null
 
 export const hasToken = () => getToken() !== null
 
