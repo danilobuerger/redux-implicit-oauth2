@@ -39,6 +39,9 @@
     "check-es3-syntax-cli": "^0.2.1",
     "cross-env": "^5.0.5",
     "eslint": "^4.7.2",
+    "eslint-plugin-jest": "^21.2.0",
+    "jest": "^21.2.1",
+    "jest-localstorage-mock": "^2.0.1",
     "rimraf": "^2.5.4",
     "webpack": "^3.6.0"
   },
@@ -49,6 +52,12 @@
     "build:umd": "cross-env NODE_ENV=development webpack src/index.js dist/redux-implicit-oauth2.js",
     "build:umd:min": "cross-env NODE_ENV=production webpack src/index.js dist/redux-implicit-oauth2.min.js",
     "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
+    "test": "jest --coverage",
     "prepublishOnly": "npm run clean && npm run lint && npm run build && check-es3-syntax --kill --print lib/ dist/"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
   }
 }
