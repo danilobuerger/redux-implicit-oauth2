@@ -14,9 +14,31 @@ export const loginFailure = error => ({
   error
 })
 
-export const login = config => ({
+export const login = (
+  { 
+    url,
+    client,
+    redirect,
+    scope,
+    responseType = 'token',
+    accessTokenKey = 'access_token',
+    parseQuery = false,
+    width = 400,
+    height = 400
+  }
+) => ({
   type: LOGIN_REQUEST,
-  config
+  config: {
+    url,
+    client,
+    redirect,
+    scope,
+    responseType,
+    accessTokenKey,
+    parseQuery,
+    width,
+    height
+  }
 })
 
 export const logout = () => ({
