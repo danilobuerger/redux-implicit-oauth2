@@ -14,11 +14,11 @@ const authMiddleware = store => next => action => {
     case LOGIN_REQUEST:
       return authorize(action.config).then(
         ({ token, expiresAt }) =>
-          store.dispatch(loginSuccess(token, expiresAt)),
+        store.dispatch(loginSuccess(token, expiresAt, action.config.disableLocalStorage)),
         error => store.dispatch(loginFailure(error))
       )
     case LOGIN_SUCCESS:
-      setToken(action.token, action.expiresAt)
+      !action.disableLocalStorage ? setToken(action.token, action.expiresAt) : removeToken()
       break
     case LOGIN_FAILURE:
     case LOGOUT:
