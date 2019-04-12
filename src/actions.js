@@ -3,10 +3,11 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
 export const LOGOUT = 'LOGOUT'
 
-export const loginSuccess = (token, expiresAt) => ({
+export const loginSuccess = (token, expiresAt, disableLocalStorage) => ({
   type: LOGIN_SUCCESS,
   token,
-  expiresAt
+  expiresAt,
+  disableLocalStorage
 })
 
 export const loginFailure = error => ({
