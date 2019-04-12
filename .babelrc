@@ -1,8 +1,5 @@
 {
-  "presets": ["es2015"],
+  "presets": ["@babel/env"],
   "plugins": [
-    "transform-es3-member-expression-literals",
-    "transform-es3-property-literals",
-    "transform-object-assign"
   ]
 }

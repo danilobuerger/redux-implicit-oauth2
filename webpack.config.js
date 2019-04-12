@@ -16,7 +16,8 @@ var config = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  config.plugins.push(
+  // webpack4 handles minimising
+  /*config.plugins.push(
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         warnings: false,
@@ -29,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
         screw_ie8: false
       }
     })
-  )
+  )*/
 }
 
 module.exports = config

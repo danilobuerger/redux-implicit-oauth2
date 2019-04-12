@@ -22,7 +22,8 @@ const config = {
   redirect: "https://example.com/callback.html",
   scope: "some_scope",
   width: 400, // Width (in pixels) of login popup window. Optional, default: 400
-  height: 400 // Height (in pixels) of login popup window. Optional, default: 400
+  height: 400, // Height (in pixels) of login popup window. Optional, default: 400
+  disableLocalStorage: true // unless disableLocalStorage is specified, the token will be stored in local storage (enabling multiple windows to share the token)
 }
 
 const Login = ({ isLoggedIn, login, logout }) => {
