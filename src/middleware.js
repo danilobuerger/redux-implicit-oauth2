@@ -12,6 +12,7 @@ import {
 const authMiddleware = store => next => action => {
   switch (action.type) {
     case LOGIN_REQUEST:
+      next(action)
       return authorize(action.config).then(
         ({ token, expiresAt }) =>
           store.dispatch(loginSuccess(token, expiresAt)),
