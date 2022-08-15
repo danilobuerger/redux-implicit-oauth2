@@ -1,21 +1,20 @@
 import {
-  LOGIN_REQUEST,
-  LOGIN_SUCCESS,
-  LOGIN_FAILURE,
-  LOGOUT,
-  login,
-  logout
-} from './actions'
-import authMiddleware from './middleware'
-import authReducer from './reducers'
-
-export {
-  LOGIN_REQUEST,
-  LOGIN_SUCCESS,
-  LOGIN_FAILURE,
-  LOGOUT,
   login,
   logout,
+  loginSuccess,
+  tokenBRequest,
+  extensionGrant,
+} from "./actions";
+import { authMiddleware } from "./middleware";
+import { auth, secondaryAuth } from "./reducers";
+
+export {
+  login,
+  logout,
+  loginSuccess,
+  tokenBRequest,
+  extensionGrant,
   authMiddleware,
-  authReducer
-}
+  auth,
+  secondaryAuth,
+};
