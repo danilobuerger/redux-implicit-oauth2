@@ -1,7 +1,5 @@
 {
-  "plugins": [
-    "jest"
-  ],
+  "plugins": ["jest"],
   "env": {
     "browser": true,
     "node": true,
@@ -10,26 +8,8 @@
   },
   "extends": "eslint:recommended",
   "parserOptions": {
-    "sourceType": "module"
+    "sourceType": "module",
+    "ecmaVersion": 9
   },
-  "rules": {
-    "indent": [
-      "error",
-      2, {
-        "SwitchCase": 1
-      }
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ]
-  }
+  "rules": {}
 }
